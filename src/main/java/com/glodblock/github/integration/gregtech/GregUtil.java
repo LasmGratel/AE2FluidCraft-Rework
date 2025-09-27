@@ -1,6 +1,7 @@
 package com.glodblock.github.integration.gregtech;
 
 import com.glodblock.github.util.Ae2Reflect;
+import com.glodblock.github.util.ModAndClassUtil;
 import gregtech.integration.jei.recipe.GTRecipeWrapper;
 import mezz.jei.api.recipe.IRecipeWrapper;
 
@@ -20,7 +21,7 @@ public class GregUtil {
 
     // because gtce and gtceu share the same id
     public static boolean isNotConsume(IRecipeWrapper wrapper, int index) {
-        if (wrapper instanceof GTRecipeWrapper && mGTRecipeWrapper_isNotConsumedItem != null) {
+        if (!ModAndClassUtil.NAE2 && wrapper instanceof GTRecipeWrapper && mGTRecipeWrapper_isNotConsumedItem != null) {
             try {
                 GTRecipeWrapper gtRecipe = (GTRecipeWrapper) wrapper;
                 return (boolean) mGTRecipeWrapper_isNotConsumedItem.invoke(gtRecipe, index);

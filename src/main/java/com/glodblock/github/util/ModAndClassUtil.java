@@ -10,6 +10,7 @@ public final class ModAndClassUtil {
     public static boolean DY = false;
     public static boolean OC = false;
     public static boolean GAS = false;
+    public static boolean NAE2 = false;
 
     public static void init() {
         if (Loader.isModLoaded("packagedauto")) {
@@ -34,6 +35,10 @@ public final class ModAndClassUtil {
 
         if (Loader.isModLoaded("mekeng")) {
             GAS = true;
+        }
+
+        if (Loader.isModLoaded("nae2")) {
+            NAE2 = true;
         }
     }
 
